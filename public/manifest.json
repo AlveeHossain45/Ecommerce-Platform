@@ -1,0 +1,10 @@
+{
+    "name": "Ultra Premium Ecommerce",
+    "short_name": "UltraShop",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "description": "A modern, responsive ecommerce frontend.",
+    "icons": []
+  }
