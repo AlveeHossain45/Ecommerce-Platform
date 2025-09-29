@@ -11,6 +11,7 @@ const Modal = ({
   size = 'md',
   closeOnOverlayClick = true
 }) => {
+  // ... (component's logic)
   const sizeClasses = {
     sm: 'max-w-sm',
     md: 'max-w-md',
@@ -28,30 +29,18 @@ const Modal = ({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          //... motion props
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           onClick={handleOverlayClick}
         >
-          <div className="absolute inset-0 bg-black bg-opacity-50" />
-
-          <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            className={clsx('relative bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full', sizeClasses[size])}
-          >
-            {(title || onClose) && (
-              <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-                {title && <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>}
-                {onClose && (
-                  <button onClick={onClose} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
-                    <X size={20} />
-                  </button>
-                )}
-              </div>
-            )}
+          {/* ... rest of the JSX */}
+          <motion.div className={clsx('relative bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full', sizeClasses[size])}>
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b">
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <button onClick={onClose}><X size={20} /></button>
+            </div>
+            {/* Content */}
             <div className="p-6">{children}</div>
           </motion.div>
         </motion.div>
@@ -60,4 +49,5 @@ const Modal = ({
   );
 };
 
+// Make sure it has a default export
 export default Modal;
