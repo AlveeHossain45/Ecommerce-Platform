@@ -1,9 +1,15 @@
-import React from 'react'
-import { Minus, Plus, Trash2 } from 'lucide-react'
-import { useCartContext } from '../../contexts/CartContext'
+import React from 'react';
+import { Minus, Plus, Trash2 } from 'lucide-react';
+import { useCartContext } from '../../contexts/CartContext.jsx';
 
+// We are using a NAMED EXPORT here
 export const CartItem = ({ item }) => {
-  const { updateQuantity, removeFromCart } = useCartContext()
+  const { updateQuantity, removeFromCart } = useCartContext();
+
+  // Ensure item is valid before rendering
+  if (!item || !item.id) {
+    return null; 
+  }
 
   return (
     <div className="flex items-center gap-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
@@ -45,5 +51,7 @@ export const CartItem = ({ item }) => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
+
+// No default export needed if you use named import

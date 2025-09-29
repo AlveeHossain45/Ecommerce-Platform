@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
+import { Trash2, ShoppingBag } from 'lucide-react';
 import { useCartContext } from '../../contexts/CartContext.jsx';
-import CartSummary from '../../components/checkout/cart-summary.jsx';
-import CartItem from '../../components/cart/cart-item.jsx';
+
+// Correctly importing NAMED exports with curly braces
+import { CartSummary } from '../../components/cart/cart-summary.jsx'; 
+import { CartItem } from '../../components/cart/cart-item.jsx'; 
 
 const Cart = () => {
   const { cart, clearCart } = useCartContext();
 
-  if (cart.length === 0) {
+  if (!cart || cart.length === 0) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <ShoppingBag size={64} className="mx-auto text-gray-400 mb-4" />
@@ -35,17 +37,15 @@ const Cart = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Cart Items */}
         <div className="lg:col-span-2 space-y-4">
           {cart.map((item) => (
             <CartItem key={`${item.id}-${item.size || ''}-${item.color || ''}`} item={item} />
           ))}
         </div>
 
-        {/* Order Summary */}
         <div className="lg:col-span-1">
           <div className="sticky top-24">
-             <CartSummary />
+             <CartSummary showCheckoutButton={true} />
           </div>
         </div>
       </div>
