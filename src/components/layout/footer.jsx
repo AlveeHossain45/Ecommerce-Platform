@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, ArrowRight, Shield, Truck, Headphones, Globe } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, ArrowRight, Shield, Truck, Headphones, Globe, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
     {
       title: 'Company',
       links: [
-        { name: 'About Onzero', path: '/about' },
+        { name: 'About OneZero', path: '/about' },
         { name: 'Our Story', path: '/story' },
         { name: 'Careers', path: '/careers' },
         { name: 'Press Kit', path: '/press' },
@@ -79,6 +79,11 @@ const Footer = () => {
     { icon: Youtube, href: '#', label: 'YouTube' }
   ];
 
+  const handleOneZeroClick = (e) => {
+    e.preventDefault();
+    window.open('https://onexero.netlify.app', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
       {/* Background Pattern */}
@@ -123,12 +128,24 @@ const Footer = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <Link to="/" className="inline-block mb-6">
-                  <h3 className="text-3xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                    Onzero
-                  </h3>
-                  <p className="text-sm text-gray-400 mt-1">onexero.netlify.app</p>
-                </Link>
+                {/* Clickable OneZero Logo */}
+                <motion.a
+                  href="https://onexero.netlify.app"
+                  onClick={handleOneZeroClick}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-block mb-6 group cursor-pointer"
+                >
+                  <div className="flex items-center space-x-3">
+                    <h3 className="text-3xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-500 group-hover:via-purple-500 group-hover:to-cyan-500 transition-all duration-300">
+                      OneZero
+                    </h3>
+                    <ExternalLink size={16} className="text-blue-400 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-300" />
+                  </div>
+                  <p className="text-sm text-gray-400 mt-1 group-hover:text-blue-400 transition-colors duration-300">
+                    onexero.netlify.app
+                  </p>
+                </motion.a>
                 
                 <p className="text-gray-400 mb-6 leading-relaxed text-lg">
                   Redefining excellence in premium e-commerce. Experience the future of online shopping with curated collections and unparalleled service.
@@ -138,7 +155,7 @@ const Footer = () => {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors duration-300">
                     <Mail size={16} className="text-blue-400" />
-                    <span>hello@onzero.com</span>
+                    <span>hello@onezero.com</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors duration-300">
                     <Phone size={16} className="text-green-400" />
@@ -218,7 +235,7 @@ const Footer = () => {
               viewport={{ once: true }}
             >
               <h3 className="text-2xl font-bold mb-4 text-white">
-                Join the Onzero Community
+                Join the OneZero Community
               </h3>
               <p className="text-gray-400 mb-8 text-lg">
                 Be the first to know about new collections, exclusive offers, and insider updates.
@@ -240,7 +257,7 @@ const Footer = () => {
               </div>
               
               <p className="text-xs text-gray-500 mt-4">
-                By subscribing, you agree to our Privacy Policy and consent to receive updates from Onzero.
+                By subscribing, you agree to our Privacy Policy and consent to receive updates from OneZero.
               </p>
             </motion.div>
           </div>
@@ -259,9 +276,15 @@ const Footer = () => {
               className="text-center md:text-left"
             >
               <p className="text-gray-400 text-sm">
-                &copy; {currentYear} <span className="text-white font-semibold">Onzero</span>. All rights reserved. 
+                &copy; {currentYear} <span className="text-white font-semibold">OneZero</span>. All rights reserved. 
                 <span className="mx-2">•</span>
-                <span className="text-blue-400">onexero.netlify.app</span>
+                <motion.a
+                  href="https://onexero.netlify.app"
+                  onClick={handleOneZeroClick}
+                  className="text-blue-400 hover:text-blue-300 transition-colors duration-300 cursor-pointer"
+                >
+                  onexero.netlify.app
+                </motion.a>
               </p>
             </motion.div>
             
