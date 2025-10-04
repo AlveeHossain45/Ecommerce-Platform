@@ -1,3 +1,5 @@
+// src/App.jsx
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext.jsx';
@@ -7,12 +9,14 @@ import { CartProvider } from './contexts/CartContext.jsx';
 // Layouts
 import MainLayout from './layouts/MainLayout.jsx';
 import AuthLayout from './layouts/AuthLayout.jsx';
-import AdminLayout from './layouts/AdminLayout.jsx'; // <-- IMPORT ADMIN LAYOUT
+import AdminLayout from './layouts/AdminLayout.jsx';
 import CheckoutLayout from './layouts/CheckoutLayout.jsx';
 
 // Pages
 import HomePage from './pages/home/HomePage.jsx';
 import ProductListing from './pages/products/ProductListing.jsx';
+import CategoryView from './pages/products/CategoryView.jsx';       // ক্যাটাগরি ডিটেল পেজ
+import CategoriesPage from './pages/products/CategoriesPage.jsx';   // সব ক্যাটাগরি দেখানোর পেজ
 import Login from './pages/auth/Login.jsx';
 import Register from './pages/auth/Register.jsx';
 import Profile from './pages/user/Profile.jsx';
@@ -22,7 +26,7 @@ import Shipping from './pages/checkout/Shipping.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
-import Dashboard from './pages/admin/Dashboard.jsx'; // <-- IMPORT ADMIN PAGES
+import Dashboard from './pages/admin/Dashboard.jsx';
 import AdminProducts from './pages/admin/Products.jsx';
 import AdminOrders from './pages/admin/Orders.jsx';
 
@@ -57,6 +61,11 @@ function App() {
               <Route path="/" element={<MainLayout />}>
                 <Route index element={<HomePage />} />
                 <Route path="products" element={<ProductListing />} />
+                
+                {/* --- নতুন যুক্ত করা রুট --- */}
+                <Route path="categories" element={<CategoriesPage />} /> {/* /categories URL এর জন্য */}
+                <Route path="category/:category" element={<CategoryView />} /> {/* /category/electronics URL এর জন্য */}
+                
                 <Route path="profile" element={<Profile />} />
                 <Route path="orders" element={<OrderHistory />} />
                 <Route path="cart" element={<Cart />} />
