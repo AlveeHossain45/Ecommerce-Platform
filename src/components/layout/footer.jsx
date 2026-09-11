@@ -155,15 +155,15 @@ const Footer = () => {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors duration-300">
                     <Mail size={16} className="text-blue-400" />
-                    <span>hello@onezero.com</span>
+                    <span>md.hosen.pro@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors duration-300">
                     <Phone size={16} className="text-green-400" />
-                    <span>+1 (555) 123-ONZE</span>
+                    <span>01957320294</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors duration-300">
                     <MapPin size={16} className="text-red-400" />
-                    <span>New York, NY 10001</span>
+                    <span>Dhaka, Bangladesh</span>
                   </div>
                 </div>
 
