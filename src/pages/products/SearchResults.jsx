@@ -3,7 +3,18 @@ import { useSearchParams, Link } from 'react-router-dom';
 import ProductGrid from '../../components/product/product-grid.jsx';
 import { useCartContext } from '../../contexts/CartContext.jsx';
 import { mockProducts } from '../../data/mockData.js';
-import { Search, Filter, SlidersHorizontal, Sparkles, TrendingUp, Clock, MapPin, Tag, X } from 'lucide-react';
+import { 
+  Search, 
+  Filter, 
+  SlidersHorizontal, 
+  Sparkles, 
+  TrendingUp, 
+  Clock, 
+  MapPin, 
+  Tag, 
+  X, 
+  Star 
+} from 'lucide-react';
 
 const SearchResults = () => {
   const [searchParams] = useSearchParams();
@@ -163,7 +174,7 @@ const SearchResults = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="px-6 py-3 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 font-semibold text-gray-700 dark:text-gray-300 appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYgOUwxMiAxNUwxOCA5IiBzdHJva2U9IiAjdjE4NzZmNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+')] bg-no-repeat bg-right-4 bg-center bg-[length:24px] pr-12"
+                className="px-6 py-3 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 font-semibold text-gray-700 dark:text-gray-300"
               >
                 <option value="relevance">Sort by Relevance</option>
                 <option value="price-low">Price: Low to High</option>
@@ -201,7 +212,7 @@ const SearchResults = () => {
                       max={maxPrice}
                       value={priceRange[1]}
                       onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
-                      className="w-full h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full appearance-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-blue-500 [&::-webkit-slider-thumb]:shadow-lg"
+                      className="w-full h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full appearance-none"
                     />
                     <div className="flex justify-between text-sm font-medium text-gray-600 dark:text-gray-400">
                       <span>$0</span>

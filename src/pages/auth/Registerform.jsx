@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Eye, EyeOff, Loader, Check, X } from 'lucide-react';
+import { Eye, EyeOff, Loader, Check, X, Crown } from 'lucide-react';
+//                                              ↑ ADDED Crown
 
 const RegisterForm = ({ onSubmit, isLoading }) => {
   const [formData, setFormData] = useState({
