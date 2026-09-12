@@ -21,7 +21,7 @@ import {
   Star,
   ShoppingCart
 } from 'lucide-react';
-import { Modal } from '../../components/ui/modal.jsx';
+import Modal from '../../components/ui/modal.jsx';
 
 const AdminProducts = () => {
   const [products, setProducts] = useState([
