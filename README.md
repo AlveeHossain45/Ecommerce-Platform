@@ -337,13 +337,16 @@ Authentication is simulated in the browser, so these accounts work without a bac
 
 ## Screenshots
 
-No screenshots are included in the repository yet. To add some:
+> **Placeholder** — run `npm run dev`, capture the pages below and save the images under `screenshots/`, then replace the paths.
 
-```bash
-npm run dev
+```md
+![Home](screenshots/home.png)
+![Product listing](screenshots/products.png)
+![Cart & checkout](screenshots/checkout.png)
+![Admin panel](screenshots/admin.png)
 ```
 
-Capture the home page, `/products`, `/cart`, `/checkout`, `/auth/login` and `/admin`, save them under `docs/screenshots/`, and link them from this README.
+Recommended captures: home page, `/products`, `/cart`, `/checkout`, `/auth/login` and `/admin`.
 
 ---
 
